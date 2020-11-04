@@ -25,5 +25,6 @@ public class Tester {
     System.out.println(words.contains("ebi"));
     yo.add("mark temple wahooooooo");
     System.out.println(yo.remove(1));
+    System.out.println(words.indexOf("uni"));
   }
 }

@@ -60,18 +60,33 @@ public class SuperArray {
   }
 
   public boolean contains(String s) {
-    int len = s.length();
-    String whole = data.toString();
-    for (int i = 0; i < len; i++) {
-      if (whole.substring(i, i + len).equals(s)) {
+    for (int i = 0; i < size; i++) {
+      if (data[i].equals(s)) {
         return true;
       }
     }
     return false;
   }
 
+  public void add(int index, String element) {
+    for (int i = size; i > index; i--) {
+      data[i] = data[i - 1];
+    }
+    data[index] = element;
+    size++;
+  }
+
+  public String remove(int index) {
+    String answer = data[index];
+    data[index] = null;
+    for (int i = index; i < size; i++) {
+      data[i] = data[i + 1];
+    }
+    return answer;
+  }
+
   private void resize() {
-    String[] larger = new String[data.length + 2];
+    String[] larger = new String[(data.length * 2) + 1];
     for (int i = 0; i < size; i++) {
       larger[i] = data[i];
     }

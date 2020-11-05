@@ -2,7 +2,7 @@ public class SuperArray {
   //instance variables
   private String [] data;
   private int size;
-  //constructor
+  //constructors
   public SuperArray() {
     data = new String[10];
     size = 0;
@@ -96,7 +96,7 @@ public class SuperArray {
   }
 
   public String[] toArray() {
-    String[] answer = new String[data.length];
+    String[] answer = new String[size];
     for (int i = 0; i < size; i++) {
       answer[i] = data[i];
     }

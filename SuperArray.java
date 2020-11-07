@@ -95,6 +95,21 @@ public class SuperArray {
       for (int i = 0; i < size; i++) {
         if (data[i].equals(s)) {
           answer = i;
+          i = size;
+        }
+      }
+      return answer;
+    }
+    return -1;
+  }
+
+  public int lastIndexOf(String value) {
+    int answer = 0;
+    if (contains(value)) {
+      for (int i = size - 1; i > -1; i--) {
+        if (data[i].equals(value)) {
+          answer = i;
+          i = -1;
         }
       }
       return answer;
@@ -110,19 +125,14 @@ public class SuperArray {
     return answer;
   }
 
-  public int lastIndexOf(String value) {
-    //still need to do
-    return 0;
-  }
-
   public boolean equals(SuperArray other) {
     if (size > other.size() || size < other.size()) {
       return false;
-    } else {
-      for (int i = 0; i < size; i++) {
-        if (data[i] != other.get(i)) {
-          return false;
-        }
+    }
+    for (int i = 0; i < size; i++) {
+      if (data[i].equals(other.get(i))) {
+      } else {
+        return false;
       }
     }
     return true;

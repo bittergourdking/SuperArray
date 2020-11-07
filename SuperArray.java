@@ -110,6 +110,24 @@ public class SuperArray {
     return answer;
   }
 
+  public int lastIndexOf(String value) {
+    //still need to do
+    return 0;
+  }
+
+  public boolean equals(SuperArray other) {
+    if (size > other.size() || size < other.size()) {
+      return false;
+    } else {
+      for (int i = 0; i < size; i++) {
+        if (data[i] != other.get(i)) {
+          return false;
+        }
+      }
+    }
+    return true;
+  }
+
   private void resize() {
     String[] larger = new String[(data.length * 2) + 1];
     for (int i = 0; i < size; i++) {

@@ -22,6 +22,8 @@ public class Demo{
     for (int i = 0; i < b.size(); i++) {
       bHelper.add(b.get(i));
     }
+    removeDuplicates(aHelper);
+    removeDuplicates(bHelper);
     String checker = "";
     for (int i = 0; i < aHelper.size(); i++) {
       checker = aHelper.get(i);

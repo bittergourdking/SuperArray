@@ -26,5 +26,20 @@ public class Tester {
     yo.add("mark temple wahooooooo");
     System.out.println(yo.remove(1));
     System.out.println(words.indexOf("uni"));
+    System.out.println(words);
+    System.out.println(words.toArray());
+
+    try {
+      System.out.println(words.get(20));
+      System.out.println(words.set(20, "yo"));
+      words.add(20, "yo");
+      System.out.println(words.remove(20));
+    }
+    catch (IllegalArgumentException e1) {
+      System.out.println("test");
+    }
+    catch (IndexOutOfBoundsException e2) {
+      System.out.println("test");
+    }
   }
 }

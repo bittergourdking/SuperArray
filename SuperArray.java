@@ -32,14 +32,14 @@ public class SuperArray {
 
   public String get(int index) {
     if (index < 0 || index >= size()) {
-      throw new IndexOutOfBoundsException("index " + index + " is not within bounds " + size());
+      throw new IndexOutOfBoundsException("index " + index + " is not within bounds 0 - " + size());
     }
     return data[index];
   }
 
   public String set(int index, String element) {
     if (index < 0 || index >= size()) {
-      throw new IndexOutOfBoundsException("index " + index + " is not within bounds " + size());
+      throw new IndexOutOfBoundsException("index " + index + " is not within bounds 0 - " + size());
     }
     String replaced = data[index];
     data[index] = element;
@@ -79,7 +79,7 @@ public class SuperArray {
 
   public void add(int index, String element) {
     if (index < 0 || index > size()) {
-      throw new IndexOutOfBoundsException("index " + index + " is not within bounds " + size());
+      throw new IndexOutOfBoundsException("index " + index + " is not within bounds 0 - " + (size() - 1));
     }
     if (size == data.length) {
       resize();
@@ -93,7 +93,7 @@ public class SuperArray {
 
   public String remove(int index) {
     if (index < 0 || index >= size()) {
-      throw new IndexOutOfBoundsException("index " + index + " is not within bounds " + size());
+      throw new IndexOutOfBoundsException("index " + index + " is not within bounds 0 - " + size());
     }
     String answer = data[index];
     for (int i = index; i < size - 1; i++) {
